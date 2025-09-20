@@ -62,7 +62,7 @@ const MySidebar = () => {
         <Sidebar collapsed={isCollapsed}>
           <Menu>
             <MenuItem
-              icon={<MenuOutlinedIcon />}
+              icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
               onClick={() => setIsCollapsed(!isCollapsed)}
               style={{ margin: "10px 0 20px 0", color: colors.grey[100] }}
             >
@@ -82,7 +82,7 @@ const MySidebar = () => {
                 </Box>
               )}
             </MenuItem>
-
+            {/* USER */}
             {!isCollapsed && (
               <Box mb="25px">
                 <Box display="flex" justifyContent="center" alignItems="center">
@@ -162,6 +162,7 @@ const MySidebar = () => {
                 selected={selected}
                 setSelected={setSelected}
               />
+
               <Item
                 title="Calendar"
                 to="/calendar"
